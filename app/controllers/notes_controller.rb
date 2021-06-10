@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
     def index
         @user = current_user
-        @available_notes = Note.all.where(creator_id: @user.id, target_id: params[:user_id]).or(Note.all.where(target_id: @user.id))
+        @available_notes = Note.all.where(target_id: params[:user_id]).or(Note.all.where(target_id: @user.id))
         @users = User.all
     end
 end
