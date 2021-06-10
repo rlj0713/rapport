@@ -2,9 +2,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new do |u|
-            u.email = params[:user][:email]
+            u.username = params[:user][:username]
             u.password = params[:user][:password]
-            u.name = params[:user][:name]
         end
         @user.save
 
@@ -17,7 +16,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = current_user
-    end
+        if session[:user_id]
+            @user = current_user
+        end
 
+    end
 end

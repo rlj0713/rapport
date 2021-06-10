@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_175701) do
+ActiveRecord::Schema.define(version: 2021_06_10_001817) do
+
+  create_table "levels", force: :cascade do |t|
+    t.integer "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "creator_id"
+    t.integer "target_id"
+    t.string "content"
+    t.integer "level_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "username"
-    t.string "email"
-    t.string "password"
+    t.boolean "coach", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"

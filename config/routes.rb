@@ -3,6 +3,15 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  get "signup" => 'users#new'
+  get "login" => 'sessions#new'
+
+  post '/sessions' => 'sessions#create'
+  delete '/sessions' => 'sessions#destroy'
+
   resources :users
+  resources :sessions
+  resources :posts
+
 
 end
