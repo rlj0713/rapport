@@ -7,7 +7,7 @@ This user is a
         <%= link_to 'List of Teachers', users_path %>
     <% else %>
         <%= "teacher" %><br><br>
-        <%= link_to 'Take a look at your coaching log', notes_path %>
+        <%= link_to 'Take a look at your coaching log', user_notes_path(@user.id) %>
     <% end %>
 <br><br>
 
