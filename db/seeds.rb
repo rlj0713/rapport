@@ -6,13 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: 'mike', password: 'ditka', coach: true)
-User.create(username: 'bill', password: 'nye', coach: true)
-User.create(username: 'ben', password: 'stein', coach: true)
-User.create(username: 'peter', password: 'pan')
-User.create(username: 'z', password: 'drake')
-User.create(username: 'reid', password: 'jackson')
-User.create(username: 'winnie', password: 'pooh')
+User.create(username: 'mike', name: 'Mike Ditka', password: 'ditka', coach: true)
+User.create(username: 'bill', name: 'Bill Nye', password: 'nye', coach: true)
+User.create(username: 'ben', name: 'Ben Stein', password: 'stein', coach: true)
+User.create(username: 'peter', name: 'Peter Pan', password: 'pan')
+User.create(username: 'z', name: 'Z Drake', password: 'drake')
+User.create(username: 'reid', name: 'Reid Jackson', password: 'jackson')
+User.create(username: 'winnie', name: 'Winnie the Pooh', password: 'pooh')
 
 (1..10).to_a.each { |n| Level.create(value: n) }
 
+Note.create(creator_id: 1, target_id: 5, content: "You're doing great", level_id: 5)
+Note.create(creator_id: 1, target_id: 6, content: "Please bathe", level_id: 5)
+Note.create(creator_id: 1, target_id: 7, content: "chill on the honey dude", level_id: 5)
+Note.create(creator_id: 1, target_id: 4, content: "stop flying so much", level_id: 5)
+Note.create(creator_id: 2, target_id: 6, content: "consider the following", level_id: 6)

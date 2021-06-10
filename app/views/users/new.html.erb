@@ -1,7 +1,9 @@
 
 <h3>Sign Up</h3>
 	<%= form_for @user, html: {class: "form"} do |f| %>
-		<%= f.text_field :username, placeholder: "username" %>
-		<%= f.text_field :password, placeholder: "password" %>
+		<%= f.text_field :username, placeholder: "username" %><br>
+		<%= f.text_field :name, placeholder: "your name" %><br>
+		<%= f.text_field :password, placeholder: "password" %><br>
+		I'm a coach<%= f.check_box :coach %><br>
 		<%= f.submit "Sign-Up" %>
 	<% end %>

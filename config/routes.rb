@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
 
-  resources :users
   resources :sessions
-  resources :posts
+  
+  resources :users do
+    resources :notes, shallow: true
+  end
 
 
 end

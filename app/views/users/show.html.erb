@@ -1,13 +1,16 @@
 
 <br><br>
-<h1>User Show Page</h1>
-Name: <%= @user.username %><br><br>
-
 <%= link_to "Log Out", session_path, method:'delete' %><br><br><br>
+<h1>User Show Page</h1>
+Name: <%= @user.name %><br><br>
+This user is a 
+    <% if @user.coach == true %>
+        <%= "coach" %><br><br>
+        <%= link_to 'List of Teachers', users_path %>
+    <% else %>
+        <%= "teacher" %><br><br>
+        <%= link_to 'Take a look at your coaching log', notes_path %>
+    <% end %>
+<br><br>
 
 
-<br>
-<br>
-List of relationships with your name included (link to posts index):<br>
-
-<%= link_to('Create a new post', '/posts/new') %>
