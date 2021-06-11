@@ -32,6 +32,12 @@ class NotesController < ApplicationController
     def edit
         @note = Note.find_by_id(params[:id])
     end
+    
+    def update
+        @note = Note.find_by_id(params[:id])
+        @note.update(note_params)
+        redirect_to user_notes_path(current_user)
+    end
 
     def destroy
         @note = Note.find_by_id(params[:id])
