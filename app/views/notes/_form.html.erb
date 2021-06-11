@@ -9,3 +9,9 @@
     <h3><%= f.submit %></h3>
 
 <% end %>
+
+<% if @note.errors.any? %>
+    <% @note.errors.each do |e| %>
+    <h3><%= e.full_message %></h3>
+    <% end %>
+<% end %>

@@ -22,7 +22,8 @@ class NotesController < ApplicationController
         @note = Note.new(note_params)
         @note.creator_id = current_user.id
         @note.target_id = session[:target_id]
-        if @note.save
+        if @note.valid?
+            @note.save
             redirect_to user_notes_path(@note.target_id)
         else
             render :new
@@ -36,7 +37,11 @@ class NotesController < ApplicationController
     def update
         @note = Note.find_by_id(params[:id])
         @note.update(note_params)
-        redirect_to user_notes_path(current_user)
+        if current_user.coach
+            redirect_to user_notes_path(@note.target_id)
+        else
+            redirect_to user_notes_path(current_user)
+        end
     end
 
     def destroy
