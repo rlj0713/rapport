@@ -1,4 +1,6 @@
-<h2> Start Coaching: </h2>
+<h2> Start Coaching: </h2><br>
+<%= link_to 'Back to my profile', user_path(@user) %><br><br>
+    <br><br>
     <% @users_at_permission_level.each do |n| %>
         <%= link_to n.name, user_notes_path(n.id) %><br><br>
     <% end %>
