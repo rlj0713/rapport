@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  get '/auth/:provider/callback' => 'google#create'
+
   get "signup" => 'users#new'
   get "login" => 'sessions#new'
 
