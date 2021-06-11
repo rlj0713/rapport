@@ -1,11 +1,11 @@
-<br><br><br><br>
+<br><br><br>
 
 <% if @user.coach == true%>
 <%= link_to 'Coach Someone Else', users_path %><br><br>
 <% else %>
-<%= link_to 'Back to my profile', user_path(@user) %> <br><br>  
+<br><%= link_to 'Back to my profile', user_path(@user) %> <br><br>  
 <% end %>
-
+<h2><%= User.find_by_id(params[:user_id]).name %>'s Log</h2>
 <%= link_to 'Add a new note', new_user_note_path %>
 <% @available_notes.each do |n| %><br><br>
 <h4>Author: <%= @users.find_by_id(n.creator_id).name %></h4>

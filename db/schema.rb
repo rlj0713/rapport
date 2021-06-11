@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_200945) do
+ActiveRecord::Schema.define(version: 2021_06_11_203948) do
 
   create_table "levels", force: :cascade do |t|
     t.integer "value"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_200945) do
     t.string "password_digest"
     t.string "name"
     t.integer "uid"
+    t.string "image"
   end
 
 end
