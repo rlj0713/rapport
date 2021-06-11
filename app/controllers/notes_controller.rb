@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
     def index
         @user = current_user
-        @available_notes = Note.all.where(target_id: params[:user_id])
+        @available_notes = Note.all.where(target_id: params[:user_id]).or(Note.all.where(target_id: @user.id))
         @users = User.all
     end
 
@@ -18,11 +18,13 @@ class NotesController < ApplicationController
     end
 
     def create
+        @levels = Level.all
         @note = Note.new(note_params)
         @note.creator_id = current_user.id
-        @note.target_id = @@target_user
+        # Make this a drop-down
+        @note.target_id = 6
         if @note.save
-            redirect_to user_notes_path
+            redirect_to user_notes_path(@note.target_id)
         else
             render :new
         end
