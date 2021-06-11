@@ -1,6 +1,6 @@
 
 <h1>User Show Page</h1>
-Welcome <%= @user.name %>
+Welcome <%= current_user.name %>
     <% if @user.coach == true %>
         <%= " -- coach" %><br><br>
         <%= link_to 'List of Teachers', users_path %>

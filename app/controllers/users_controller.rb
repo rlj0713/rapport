@@ -3,13 +3,18 @@ class UsersController < ApplicationController
     def create
         @user = User.new do |u|
             u.username = params[:user][:username]
+            u.name = params[:user][:name]
             u.password = params[:user][:password]
             u.coach = params[:user][:coach]
         end
-        @user.save
-
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        
+        if @user.valid?
+            @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            render :new
+        end
     end
 
     def new
