@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy'
 
   resources :sessions
+  resources :notes
   
   resources :users do
     resources :notes, shallow: true
