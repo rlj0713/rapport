@@ -1,6 +1,11 @@
 <%= form_for(@note) do |f| %>
     <%= f.label :content %><br>
-    <%= f.text_area :content, size: "70x5" %><br>
+    <%= f.text_area :content, size: "70x5" %>
+        <% if @note.errors.any? %>
+            <% @note.errors.each do |e| %>
+            <h3><%= e.full_message %></h3>
+            <% end %>
+        <% end %><br>
 
     Priority <%= f.label :level_id %>
     <%= f.range_field :level_id, in: 1..10 %><br>
@@ -8,10 +13,4 @@
     
     <h3><%= f.submit %></h3>
 
-<% end %>
-
-<% if @note.errors.any? %>
-    <% @note.errors.each do |e| %>
-    <h3><%= e.full_message %></h3>
-    <% end %>
 <% end %>
