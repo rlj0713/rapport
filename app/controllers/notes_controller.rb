@@ -14,15 +14,14 @@ class NotesController < ApplicationController
     def new
         @note = Note.new
         @user = current_user
-        @@target_user = params[:user_id].to_i
+        session[:target_id] = target_user = params[:user_id].to_i
     end
 
     def create
         @levels = Level.all
         @note = Note.new(note_params)
         @note.creator_id = current_user.id
-        # Make this a drop-down
-        @note.target_id = 6
+        @note.target_id = session[:target_id]
         if @note.save
             redirect_to user_notes_path(@note.target_id)
         else
