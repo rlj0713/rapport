@@ -1,5 +1,5 @@
 <br><br>
-<img src="<%= current_user.image %>">
+<img src="<%= current_user.image %>" class="profile_pic">
 <h1>Welcome <%= current_user.name %>
     <% if @user.coach == true %>
         <%= " -- coach" %></h1><br><br>
@@ -9,5 +9,3 @@
         <h2><%= link_to 'Take a look at your coaching log', user_notes_path(@user.id) %></h2>
     <% end %>
 <br><br>
-
-

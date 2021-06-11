@@ -17,3 +17,8 @@
 .field_with_errors input {
     border-color: red;
 }
+
+.profile_pic {
+    width: 5%;
+    height: auto;
+}
