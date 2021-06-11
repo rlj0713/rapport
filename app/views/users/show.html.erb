@@ -1,11 +1,11 @@
 
 <h1>User Show Page</h1>
-This user is a 
+Welcome <%= @user.name %>
     <% if @user.coach == true %>
-        <%= "coach" %><br><br>
+        <%= " -- coach" %><br><br>
         <%= link_to 'List of Teachers', users_path %>
     <% else %>
-        <%= "teacher" %><br><br>
+        <%= " -- teacher" %><br><br>
         <%= link_to 'Take a look at your coaching log', user_notes_path(@user.id) %>
     <% end %>
 <br><br>
