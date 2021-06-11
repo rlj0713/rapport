@@ -14,7 +14,7 @@ class NotesController < ApplicationController
     def new
         @note = Note.new
         @user = current_user
-        session[:target_id] = target_user = params[:user_id].to_i
+        session[:target_id] = params[:user_id].to_i
     end
 
     def create

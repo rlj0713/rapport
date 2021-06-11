@@ -1,4 +1,12 @@
 <br><br>
-<h2>Create a new note!</h2>
+<% if current_user.coach  %>
+<%= link_to 'Back', user_notes_path(session[:target_id]) %>
+<% else  %>
+<%= link_to 'Back', user_notes_path(current_user) %>
+<% end  %>
+
+<br><br>
+<h2>Create a new note:</h2>
+
 
 <%= render :partial => 'form' %>
