@@ -29,6 +29,10 @@ class NotesController < ApplicationController
         end
     end
 
+    def edit
+        @note = Note.find_by_id(params[:id])
+    end
+
     def destroy
         @note = Note.find_by_id(params[:id])
         @note.destroy
