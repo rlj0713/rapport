@@ -13,6 +13,7 @@
 <h4>Author: <%= @users.find_by_id(n.creator_id).name %></h4>
 For: <%= @users.find_by_id(n.target_id).name %><br>
 Content: <%= n.content %><br>
+Content: <%= n.category.name %><br>
 Priority: <%= n.level_id %><br>
     <% if n.creator_id == @user.id %>
         <%= link_to 'Delete', note_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %> - 
