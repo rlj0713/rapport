@@ -7,7 +7,7 @@
             <% end %>
         <% end %><br>
 
-    Category <%= f.label :category_id %>
+    <%= f.label :category_id %>
     <%= f.collection_select :category_id, Category.all, :id, :name %><br>
 
     Priority <%= f.label :level_id %>
