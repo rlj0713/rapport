@@ -2,11 +2,11 @@
 <h1>Welcome <%= current_user.name %>
     <% if @user.coach == true %>
         <%= " -- Coach" %></h1><br><br>
-        <h4><%= @quote_list.sample %></h4>
-        <h2><%= link_to 'List of Teachers', users_path %></h2>
+        <h4><%= @coach_quote_list.sample %></h4>
+        <a href= <%=users_path%> class='button'>Get Started<a>
     <% else %>
         <%= " -- Teacher" %></h1><br><br>
-        <h4>Test</h4>
-        <h2><%= link_to 'Take a look at your coaching log', user_notes_path(@user.id) %></h2>
+        <h4><%= @teacher_quote_list.sample %></h4>
+        <a href= <%=user_notes_path(@user.id)%> class='button'>Take a look at your coaching log<a>
     <% end %>
 <br><br>

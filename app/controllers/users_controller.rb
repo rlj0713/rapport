@@ -23,7 +23,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        @quote_list = ["A coach is someone who can give correction without causing resentment.", "Coaches have to watch for what they don’t want to see and listen to what they don’t want to hear.", "The interesting thing about coaching is that you have to trouble the comfortable, and comfort the troubled."]
+        @coach_quote_list = ["A coach is someone who can give correction without causing resentment.", "Coaches have to watch for what they don’t want to see and listen to what they don’t want to hear.", "The interesting thing about coaching is that you have to trouble the comfortable, and comfort the troubled."]
+        @teacher_quote_list = ["Feedback is the breakfast of champions.", "Strive for continuous improvement, instead of perfection.", "Mistakes should be examined, learned from, and discarded; not dwelled upon and stored."]
         if session[:user_id]
             @user = current_user
             @notes = Note.all
