@@ -5,6 +5,7 @@ class Notes < ActiveRecord::Migration[6.1]
       t.integer :target_id
       t.string  :content
       t.integer :level_id
+      t.integer :category_id
 
       t.timestamps
     end

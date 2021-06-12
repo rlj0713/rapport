@@ -7,6 +7,9 @@
             <% end %>
         <% end %><br>
 
+    Category <%= f.label :category_id %>
+    <%= f.fields_for :category %><br>
+
     Priority <%= f.label :level_id %>
     <%= f.range_field :level_id, in: 1..10 %><br>
     

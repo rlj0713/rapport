@@ -16,11 +16,15 @@ User.create(username: 'winnie', name: 'Winnie the Pooh', password: 'pooh', image
 
 (1..10).to_a.each { |n| Level.create(value: n) }
 
-Note.create(creator_id: 1, target_id: 5, content: "You're doing great", level_id: 5)
-Note.create(creator_id: 1, target_id: 6, content: "Please bathe", level_id: 5)
-Note.create(creator_id: 1, target_id: 7, content: "Chill on the honey dude", level_id: 5)
-Note.create(creator_id: 1, target_id: 4, content: "Stop flying so much", level_id: 5)
-Note.create(creator_id: 2, target_id: 6, content: "Consider the following", level_id: 6)
-Note.create(creator_id: 6, target_id: 6, content: "I'm working on the smell", level_id: 6)
-Note.create(creator_id: 7, target_id: 7, content: "I think I'm stuck", level_id: 6)
+Category.create(name: "Classroom Management")
+Category.create(name: "Professionalism")
+Category.create(name: "Instruction")
+
+Note.create(creator_id: 1, target_id: 5, content: "You're doing great!", level_id: 5, category_id: 1)
+Note.create(creator_id: 1, target_id: 6, content: "Please bathe.", level_id: 5, category_id: 2)
+Note.create(creator_id: 1, target_id: 7, content: "Chill on the honey dude.", level_id: 5, category_id: 2)
+Note.create(creator_id: 1, target_id: 4, content: "Stop flying so much, it's distracting the students.", level_id: 5, category_id: 3)
+Note.create(creator_id: 2, target_id: 6, content: "Consider the following", level_id: 6, category_id: 1)
+Note.create(creator_id: 6, target_id: 6, content: "I'm working on the smell", level_id: 6, category_id: 2)
+Note.create(creator_id: 7, target_id: 7, content: "I think I'm stuck", level_id: 6, category_id: 2)
 
