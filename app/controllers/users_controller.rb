@@ -6,7 +6,7 @@ class UsersController < ApplicationController
             u.name = params[:user][:name]
             u.password = params[:user][:password]
             u.coach = params[:user][:coach]
-            u.image = "https://ih1.redbubble.net/image.371090777.1645/flat,128x128,075,t.u2.jpg"
+            u.image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU"
         end
         
         if @user.valid?

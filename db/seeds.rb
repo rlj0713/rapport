@@ -11,7 +11,7 @@ User.create(username: 'bill', name: 'Bill Nye', password: 'nye', coach: true, im
 User.create(username: 'ben', name: 'Ben Stein', password: 'stein', coach: true, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
 User.create(username: 'peter', name: 'Peter Pan', password: 'pan', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
 User.create(username: 'z', name: 'Z Drake', password: 'drake', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
-User.create(username: 'reid', name: 'Reid Jackson', password: 'jackson', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
+User.create(username: 'pig', name: 'Pig Pen', password: 'pen', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
 User.create(username: 'winnie', name: 'Winnie the Pooh', password: 'pooh', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTb6qZreuzn7kXfZd-xZsRk2WvgU4bD0ttg&usqp=CAU")
 
 (1..10).to_a.each { |n| Level.create(value: n) }
