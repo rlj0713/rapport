@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user
         else
+            @error = 'username and password do not match our system'
             render :new
         end
     end

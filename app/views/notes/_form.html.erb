@@ -3,7 +3,7 @@
     <%= f.text_area :content, size: "70x5" %>
         <% if @note.errors.any? %>
             <% @note.errors.each do |e| %>
-            <h3><%= e.full_message %></h3>
+            <h5><%= e.full_message %></h5>
             <% end %>
         <% end %><br>
 

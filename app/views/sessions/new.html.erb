@@ -6,9 +6,12 @@
   <%= text_field_tag :'user[username]' %><br>
 
   <label>Password</label><br>
-  <%= password_field_tag :'user[password]' %><br>
+  <%= password_field_tag :'user[password]' %>
 
-  <%= submit_tag "Log-In" %>
+  <h5><%= @error %></h5><br>
+
+
+  <%= submit_tag "Log-In" %><br><br>
 <% end %>
 
 <%= link_to('Log in with Google', '/auth/google_oauth2', method: :post) %>
