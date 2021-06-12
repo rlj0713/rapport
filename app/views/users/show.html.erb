@@ -1,11 +1,12 @@
 <br><br>
-<img src="<%= current_user.image %>" class="profile_pic">
 <h1>Welcome <%= current_user.name %>
     <% if @user.coach == true %>
-        <%= " -- coach" %></h1><br><br>
+        <%= " -- Coach" %></h1><br><br>
+        <h4><%= @quote_list.sample %></h4>
         <h2><%= link_to 'List of Teachers', users_path %></h2>
     <% else %>
-        <%= " -- teacher" %></h1><br><br>
+        <%= " -- Teacher" %></h1><br><br>
+        <h4>Test</h4>
         <h2><%= link_to 'Take a look at your coaching log', user_notes_path(@user.id) %></h2>
     <% end %>
 <br><br>
