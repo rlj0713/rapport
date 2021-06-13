@@ -5,21 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.6.1
 
-* System dependencies
+* Database - SQlite3 with ActiveRecord
 
-* Configuration
+* Deployment instructions - To get up and running; fork this repo, run bundle, migrate the database (rails db:migrate), seed the database (rails db:sed), and start up the rails server (rails s).
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # rapport
