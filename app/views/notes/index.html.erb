@@ -10,14 +10,14 @@
 <%= link_to 'Add a new note', new_user_note_path %>
 
 <% @available_notes.each do |n| %><br><br>
-<h4>Author: <%= @users.find_by_id(n.creator_id).name %></h4>
-For: <%= @users.find_by_id(n.target_id).name %><br>
-Content: <%= n.content %><br>
-Content: <%= n.category.name %><br>
-Priority: <%= n.level_id %><br>
-    <% if n.creator_id == @user.id %>
-        <%= link_to 'Delete', note_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %> - 
-        <%= link_to 'Edit', edit_note_path(n.id), method: :get %>
-    <% end %>
+    <h4>Author: <%= @users.find_by_id(n.creator_id).name %></h4>
+    <strong>For:</strong> <%= @users.find_by_id(n.target_id).name %><br>
+    <strong>Content:</strong> <%= n.content %><br>
+    <strong>Content:</strong> <%= n.category.name %><br>
+    <strong>Priority:</strong> <%= n.level_id %><br>
+        <% if n.creator_id == @user.id %>
+            <%= link_to 'Delete', note_path(n.id), method: :delete, data: { confirm: 'Are you sure?' } %> - 
+            <%= link_to 'Edit', edit_note_path(n.id), method: :get %>
+        <% end %>
 <% end %>
 

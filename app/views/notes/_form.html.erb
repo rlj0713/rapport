@@ -5,7 +5,8 @@
             <% @note.errors.each do |e| %>
             <h5><%= e.full_message %></h5>
             <% end %>
-        <% end %><br>
+        <% end %>
+        <br>
 
     <%= f.label :category_id %>
     <%= f.collection_select :category_id, Category.all, :id, :name %><br>
