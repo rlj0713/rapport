@@ -25,4 +25,5 @@ Confirm:
 
 
 Blog Post - https://rlj0713.medium.com/rails-for-the-first-time-b1d333d04576
+5 min walkthrough - https://www.youtube.com/watch?v=x6Nwust8Ojg
 
