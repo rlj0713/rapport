@@ -12,6 +12,10 @@ class SessionsController < ApplicationController
     end
 
     def new
+        @user = User.find_by_id(session[:user_id])
+        if session[:user_id]
+            redirect_to @user
+        end
     end
 
     def destroy

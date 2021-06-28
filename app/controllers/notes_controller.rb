@@ -6,9 +6,14 @@ class NotesController < ApplicationController
     end
 
     def index
+        # elminiate security issue
         @user = current_user
-        @available_notes = Note.all.where(target_id: params[:user_id]).or(Note.all.where(target_id: @user.id)).order(id: :desc)
         @users = User.all
+        if @user.coach
+            @available_notes = Note.target(params[:user_id]).or(Note.all.where(target_id: @user.id)).order(id: :desc)
+        else
+            @available_notes = Note.target(session[:user_id]).or(Note.all.where(target_id: @user.id)).order(id: :desc)
+        end
     end
 
     def new
@@ -18,8 +23,8 @@ class NotesController < ApplicationController
     end
 
     def create
-        @levels = Level.all
         @note = Note.new(note_params)
+        @levels = Level.all
         @note.creator_id = current_user.id
         @note.target_id = session[:target_id]
         if @note.valid?
