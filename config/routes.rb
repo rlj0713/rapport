@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :sessions
   resources :notes
+  resources :admins
+  resources :googles
   
   resources :users do
     resources :notes, shallow: true

@@ -18,6 +18,9 @@
     <% else %>
       <%= link_to "Log Out", sessions_path, method:'delete' %> || 
       User - <%= current_user.name %>
+      <% if current_user.school_id %>
+       || School - <%= School.find_by_id(current_user.school_id).name %>
+      <% end %>
       <img src="<%= current_user.image %>" class="profile_pic">
     <% end %>
   

@@ -1,5 +1,9 @@
-<br><%= link_to 'Back to my profile', user_path(@user) %><br><br>
+<br><br><%= link_to 'Back to my profile', user_path(@user) %><br><br>
 <h2> Start Coaching: </h2><br>
     <% @users_at_permission_level.each do |n| %>
-        <%= link_to n.name, user_notes_path(n.id) %><br><br>
+        <%= link_to n.name, user_notes_path(n.id) %> - 
+        <%= n.email %>
+
+        <h6><%= link_to 'Delete', user_path(n.id), method: :delete, data: { confirm: 'Are you sure? All data associated with this user will be lost.' } %> - 
+        <%= link_to 'Edit', edit_user_path(n.id), method: :get %></h6><br><br>
     <% end %>

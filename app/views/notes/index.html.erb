@@ -8,6 +8,7 @@
 <% if @user.coach %>
 <h2><%= User.find_by_id(params[:user_id]).name %>'s Log</h2>
 <% else %>
+
 <h2><%= User.find_by_id(session[:user_id]).name %>'s Log</h2>
 <% end %>
 

@@ -1,0 +1,19 @@
+<br><br>
+<%= link_to 'Back to my profile', user_path(@user) %>
+<h3><%= @user.name %></h3>
+<%= form_for @user, html: {class: "form"} do |f| %>
+		Name: <%= f.text_field :name, placeholder: "your name" %><br>
+        School: <%= f.collection_select :school_id, School.all, :id, :name %><br><br>
+		
+        <% if current_user.coach %>
+		Select if this user is a coach: <%= f.check_box :coach %><br><br>
+		<% end %>
+
+		<% if @user.errors.any? %>
+            <% @user.errors.each do |e| %>
+            <h5><%= e.full_message %></h5>
+            <% end %>
+        <% end %>
+		
+		<%= f.submit "Update" %>
+	<% end %>
