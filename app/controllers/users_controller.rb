@@ -55,6 +55,10 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find_by_id(params[:id])
+        @notes = Note.where(target_id: @user.id)
+        @notes.each do |n|
+            n.destroy
+        end
         @user.destroy
         redirect_to users_path(@user)
     end
