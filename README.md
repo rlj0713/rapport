@@ -1,14 +1,22 @@
-# README
+Rapport
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.6.1
 
-Things you may want to cover:
+Rapport is a Ruby application designed to improve the performance of teams and their communication.
 
-* Ruby version - 2.6.1
+To contribute, feel free to clone this repository.
 
-* Database - SQlite3 with ActiveRecord
+To work on this application locally, after cloning:
+1. Change the gem-file to remove gem 'pg' and replace with gem 'sqlite3'
+2. Run Bundle
+3. Run Rails db:migrate
+4. Run Rails db:seed
+5. Obtain a google oauth key and secret
+6. Add a .env file and paste your key + secret in that file (follow oauth docs for more detail)
+7. run rails s
+8. Open a browser and navigate to localhost://3000
 
-* Deployment instructions - To get up and running; fork this repo, run bundle, migrate the database (rails db:migrate), seed the database (rails db:sed), and start up the rails server (rails s).
+Enjoy
 
-# rapport
+License
+MIT
