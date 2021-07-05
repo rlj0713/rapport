@@ -1,3 +1,9 @@
 
+<br><br>
+<% if current_user.coach  %>
+<%= link_to 'Back', user_notes_path(session[:target_id]) %>
+<% else  %>
+<%= link_to 'Back', user_notes_path(current_user) %>
+<% end  %>
 
 <%= render :partial => 'form' %>
