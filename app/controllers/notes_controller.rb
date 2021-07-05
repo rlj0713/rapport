@@ -6,7 +6,6 @@ class NotesController < ApplicationController
     end
 
     def index
-        # elminiate security issue
         @user = current_user
         @users = User.all
         if @user.coach
@@ -37,6 +36,7 @@ class NotesController < ApplicationController
 
     def edit
         @note = Note.find_by_id(params[:id])
+        session[:target_id] = @note.target_id
     end
     
     def update
@@ -52,7 +52,7 @@ class NotesController < ApplicationController
     def destroy
         @note = Note.find_by_id(params[:id])
         @note.destroy
-        redirect_to user_notes_path(current_user)
+        redirect_to user_notes_path(session[:target_id])
     end
 
     private
