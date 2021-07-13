@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     def index
         @user = current_user
         if @user.coach
-            @users_at_permission_level = User.all.where(coach: false, school_id: @user.school_id).sort_by_name
+            @users_at_permission_level = User.all.where(coach: false, school_id: @user.school_id).sort_by{ |obj| obj.name }
         else
             @users_at_permission_level = @user
         end
