@@ -6,6 +6,8 @@ Rapport is a Ruby application designed to improve the performance of teams and t
 
 To contribute, feel free to clone this repository.
 
+User Walk-Through: https://youtu.be/x6Nwust8Ojg
+
 To work on this application locally, after cloning:
 1. Change the gem-file to remove gem 'pg' and replace with gem 'sqlite3'
 2. Run Bundle
