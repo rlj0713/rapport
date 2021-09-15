@@ -1,5 +1,7 @@
 Rapport
 
+Visit https://www.school-rapport.com
+
 Ruby version 2.6.1
 
 Rapport is a Ruby application designed to improve the performance of teams and their communication.
